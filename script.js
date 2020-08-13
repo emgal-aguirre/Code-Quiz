@@ -1,5 +1,4 @@
 var startButtonEl = document.querySelector("#start-btn");
-var nextButtonEl = document.querySelector("#next-btn");
 var questionContainerEl = document.querySelector("#questions-container");
 var questionEl = document.querySelector("#questions");
 var answersEl = document.querySelector("#answer-btns");
@@ -11,9 +10,10 @@ var button3El = document.querySelector("#btn3");
 var button4El = document.querySelector("#btn4");
 var selectedButtonsEl = document.querySelector("#answer-btns");
 var submitInitialsEl = document.querySelector("#submit-initials");
-var inputInitialsEl = document.querySelector("#input-initials");
+var inputInitialsEl = document.querySelector("#initials");
 var initialsBtnEl = document.querySelector("#initial-button");
 var restartbtnEl = document.querySelector("#go-back");
+var highScoresListEl = document.querySelector("#high-scores-list");
 
 
 
@@ -26,6 +26,7 @@ var timer;
 var questionsIndex = 0;
 var storedScores = JSON.parse(localStorage.getItem("store-scores"));
 var storage = [];
+
 
 var questionary = [
     {
@@ -109,14 +110,16 @@ selectedButtonsEl.addEventListener("click", function () {
 
 });
 
-function storeScores() {
+function storeScores(event) {
+    event.preventDefault();
     if (!storedScores) {
         storedScores = [];
-        storedScores.push({ "inital": inital, "score": timeLimit });
+        storedScores.push({ "initals": initals, "score": timeLimit });
+        document.querySelector("#input-initials").textContent = initals;
+        document.querySelector("#high-score").textContent = score;
     }
 
 }
-
 
 
 

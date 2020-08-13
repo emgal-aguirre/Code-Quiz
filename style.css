@@ -42,3 +42,8 @@ body {
 .hidden-block {
     display: none;
 }
+
+h2 {
+    font-size: medium;
+    
+}
