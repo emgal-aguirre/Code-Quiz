@@ -1,3 +1,4 @@
+//DOM Elements 
 var startButtonEl = document.querySelector("#start-btn");
 var questionContainerEl = document.querySelector("#questions-container");
 var questionEl = document.querySelector("#questions");
@@ -16,18 +17,18 @@ var restartbtnEl = document.querySelector("#go-back");
 var highScoresListEl = document.querySelector("#high-scores-list");
 
 
-
+//event listeners 
 startButtonEl.addEventListener("click", StartGame);
 submitInitialsEl.addEventListener("click", storeScores);
 
-
+//global variables
 var timeLimit = 100;
 var timer;
 var questionsIndex = 0;
 var storedScores = JSON.parse(localStorage.getItem("store-scores"));
 var storage = [];
 
-
+//question objects
 var questionary = [
     {
         question: "Insied which HTML element do we put the Javascript?",
@@ -46,7 +47,7 @@ var questionary = [
         correct: `alertBox("Hello World")`
     },
     {
-        question: "How do you create a function in Javascript",
+        question: "How do you create a function in Javascript?",
         answer1: "function myFunction ()",
         answer2: "function = myFunction ()",
         answer3: "function: myFunction ()",
@@ -63,7 +64,7 @@ var questionary = [
     },
 ]
 
-
+//starting the game upon click 
 function StartGame() {
     questionContainerEl.style.display = "block";
     controlEl.style.display = "none";
@@ -71,7 +72,7 @@ function StartGame() {
     nextQuestions();
 }
 
-
+//moving to the next question in the above questionary object
 function nextQuestions() {
     questionEl.innerText = questionary[questionsIndex].question;
     button1El.innerText = questionary[questionsIndex].answer1;
@@ -81,17 +82,18 @@ function nextQuestions() {
 
 }
 
-
+//timer function
 function setTime() {
     timeLimitEl.innerText = timeLimit;
     timeLimit--;
     if (timeLimit === 0) {
         clearInterval(timer);
-        questionContainerEl.style.display = "none";
+        // questionContainerEl.style.display = "block";
+        submitInitialsEl.style.display = "none";
     }
 }
 
-
+//when answer incorrect answer is clicked, 10 seconds is subtracted from the timer & moves to next question or when time/questions ends timer ends. 
 selectedButtonsEl.addEventListener("click", function () {
     var answer = event.target.innerText;
     if (questionary[questionsIndex].correct !== answer) {
@@ -104,12 +106,14 @@ selectedButtonsEl.addEventListener("click", function () {
     } else {
         clearInterval(timer)
         questionContainerEl.style.display = "none";
+        submitInitialsEl.style.display = "none"
 
     }
 
 
 });
 
+//attempt to make time save as score in localstorage 
 function storeScores(event) {
     event.preventDefault();
     if (!storedScores) {
@@ -118,12 +122,10 @@ function storeScores(event) {
         document.querySelector("#input-initials").textContent = initals;
         document.querySelector("#high-score").textContent = score;
     }
+    localStorage.setItem("itials", initals);
+    localStorage.setItem("score", timeLimit);
 
 }
-
-
-
-
 
 
 
