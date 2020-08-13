@@ -18,7 +18,7 @@ body {
     padding: 20px;
 }
 
-.btnGrid {
+.btn-grid {
     display: grid;
     grid-template-columns: repeat(2, auto);
     gap: 10px;
@@ -30,7 +30,7 @@ body {
     background-color: white;
     border: 1px;
     border-radius: 5px;
-    border-color:black
+    border-color:black;
     padding: 5px;
 }
 
@@ -39,9 +39,6 @@ body {
     background-color: black;
 }
 
-.startBtn, .nextBtn {
-    font-size: medium;
-    font-weight: bold;
-    padding: 10px;
-    align-items: center;
+.hidden-block {
+    display: none;
 }

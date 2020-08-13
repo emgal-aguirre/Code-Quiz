@@ -15,20 +15,31 @@
 
 <body>
     <div class="container">
-        <div id="questions-container">
-            <div id="questions">Questions</div>
-            <div id="answerBtns" class="btnGrid">
-                <button class="btn"> Answer 1 </button>
-                <button class="btn"> Answer 2 </button>
-                <button class="btn"> Answer 3 </button>
-                <button class="btn"> Answer 4 </button>
+        <div id="controls" class="controls">
+            <h1>Start the Quiz!</h1>
+            <button id="start-btn" class="btn" class="start-btn">Start!</button>
+        </div>
+        <div id="questions-container" class="hidden-block btn-grid">
+            <h2>This is my timer <span id="time-limit"></span></h2>
+            <h1 id="questions">Questions</h1>
+            <div id="answer-btns" class="btn-grid">
+                <button id="btn1" class="btn selected-btn"> Answer 1 </button>
+                <button id="btn2" class="btn selected-btn"> Answer 2 </button>
+                <button id="btn3" class="btn selected-btn"> Answer 3 </button>
+                <button id="btn4" class="btn selected-btn"> Answer 4 </button>
             </div>
-        </div>
-        <div class="controls">
-            <button id="start-Btn" class="btn" class="startBtn">Start!</button>
-            <button id="next-Btn" class="btn" class="nextBtn">Next Question!</button>
-        </div>
 
+
+        </div>
+        <div id="submit-initials" class="hidden-block">
+            <label for="input-initials">Please enter your initials</label>
+            <input name="input-initials" type="text" id="input-initials">
+            <button id="initial-button" class="btn">Submit! </button>
+        </div>
+        <div id="high-score" class="hidden-block">
+            <ul id="high-score">Final Score</ul>
+            <button id="go-back" class="btn">Restart!</button>
+        </div>
     </div>
 
 
