@@ -31,7 +31,7 @@ var storage = [];
 //question objects
 var questionary = [
     {
-        question: "Insied which HTML element do we put the Javascript?",
+        question: "Inside which HTML element do we put the Javascript?",
         answer1: "<javascript>",
         answer2: "<scripting>",
         answer3: "<script>",
@@ -106,7 +106,7 @@ selectedButtonsEl.addEventListener("click", function () {
     } else {
         clearInterval(timer)
         questionContainerEl.style.display = "none";
-        submitInitialsEl.style.display = "none"
+        submitInitialsEl.style.display = "none";
 
     }
 

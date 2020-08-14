@@ -6,7 +6,7 @@ body {
     height: 50vh;
     justify-content: center;
     align-items: center;
-    background-color:white;
+    background-color: #457b9d;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -44,6 +44,7 @@ body {
 }
 
 h2 {
-    font-size: medium;
+    font-size: large;
+    font-weight: bold;
     
 }
